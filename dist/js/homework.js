@@ -28,7 +28,14 @@ function addItemInfoDecorator(target, method, descriptor) {
         return result;
     };
 }
-function addItemInfoDecorator2(target, method, descriptor) {
+/**
+ * Декоратор метода, добавляет поле с датой вызова метода и поле с информацией о товаре (вариант №2)
+ * @param {Object} target - метод, для которого применяется декоратор
+ * @param {string} method - имя метода для которого применяется декоратор
+ * @param {PropertyDescriptor} descriptor -  дескриптор данного свойства
+ * @returns {void}
+ */
+function addItemInfoDecoratorV2(target, method, descriptor) {
     return {
         value: function () {
             let result = descriptor.value.apply(this);
